@@ -19,7 +19,7 @@ Or
 ### 2A
 
 ```bash
-> cd example/example-2a
+> cd example/example_2a
 > microns-2a-run ./csvs ./images microns/random-performer
 > microns-2a-analyze TODO
 ```
@@ -27,7 +27,7 @@ Or
 ### 2B
 
 ```bash
-> cd example/example-2b
+> cd example/example_2b
 > microns-2b-run ./csvs ./images microns/random-performer
 > microns-2b-analyze TODO
 ```
