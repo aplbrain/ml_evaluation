@@ -311,10 +311,10 @@ def new_class_confusion(metrics, algorithm, experiment):
     num_new = metrics.new_class_confusion[True][True] + metrics.new_class_confusion[True][False]
     num_old = metrics.new_class_confusion[False][True] + metrics.new_class_confusion[False][False]
     sns.heatmap(
-        [[100 * metrics.new_class_confusion[True][True] / num_new,
-          100 * metrics.new_class_confusion[True][False] / num_new],
-         [100 * metrics.new_class_confusion[False][True] / num_old,
-          100 * metrics.new_class_confusion[False][False] / num_old]],
+        [[100 * metrics.new_class_confusion[True][True] / num_new if num_new > 0 else 0,
+          100 * metrics.new_class_confusion[True][False] / num_new if num_new > 0 else 0],
+         [100 * metrics.new_class_confusion[False][True] / num_old if num_old > 0 else 0,
+          100 * metrics.new_class_confusion[False][False] / num_old if num_old > 0 else 0]],
         cmap='Greens', annot=True, fmt='.1f', square=True, xticklabels=['New Class', 'Old Class'],
         yticklabels=['New Class', 'Old Class'], annot_kws={'weight': 'heavy'})
     plt.ylabel('Correct Class')

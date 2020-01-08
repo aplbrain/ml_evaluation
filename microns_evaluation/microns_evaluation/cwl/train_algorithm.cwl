@@ -40,7 +40,7 @@ requirements:
 
 baseCommand: [docker, run, -i, --rm]
 arguments:
-  - --user=$(inputs.user)
+#  - --user=$(inputs.user)
   - valueFrom: $("--runtime=" + inputs.runtime)
   - --volume=$(inputs.taskInfoFile.path):/config/config.json:ro
   - --volume=$(inputs.trialsFile.path):/input/input.csv:ro

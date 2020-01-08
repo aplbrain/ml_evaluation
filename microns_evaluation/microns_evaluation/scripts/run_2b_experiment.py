@@ -39,6 +39,8 @@ def main():
                         help='The name of the zip file to upload to s3. If not specified, no upload will take place.')
     args = parser.parse_args()
 
+    os.makedirs('./empty-params', exist_ok=True)
+
     params_dir = os.path.abspath(args.initial_params)
     cwl_file = pkg_resources.resource_filename('microns_evaluation', 'cwl/task_2b.cwl')
     images_dir = os.path.abspath(args.images_dir)
